@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="registration"
+            type="com.cabot.androidtemplateproject.modules.registration.viewmodel.RegistrationViewModel"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:text="Profile"/>
+
+        <TextView
+            android:id="@+id/firstNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:textSize="8sp"
+            android:text="FirstName"/>
+
+        <EditText
+            android:id="@+id/firstNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/firstNameTextView"
+            android:inputType="textPersonName"
+            android:selectAllOnFocus="true"
+            android:maxLines="1"
+            android:textColor="#000000"
+            android:onTextChanged="@{registration::onFirstNameChanged}"/>
+
+        <TextView
+            android:id="@+id/lastNameTextView"
+            android:layout_below="@id/firstNameEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:textSize="8dp"
+            android:text="LastName"/>
+
+        <EditText
+            android:id="@+id/lastNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lastNameTextView"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            android:selectAllOnFocus="true"
+            android:textColor="#000000"
+            android:onTextChanged="@{registration::onLastNameChanged}"/>
+
+        <TextView
+            android:id="@+id/mobileNumberTextView"
+            android:layout_below="@id/lastNameEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="8sp"
+            android:text="Mobile Number"/>
+
+        <EditText
+            android:id="@+id/mobileNumberEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mobileNumberTextView"
+            android:inputType="phone"
+            android:maxLines="1"
+            android:hint="XXXX"
+            android:editable="true"
+            android:selectAllOnFocus="true"
+            android:textColor="#000000"
+            android:onTextChanged="@{registration::onMobileNumberChanged}"/>
+
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/continueButton"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:text="Continue"
+        android:textColor="#ffffff"
+        android:textAllCaps="false"
+        android:textSize="14sp"
+        android:background="@color/colorPrimaryDark"
+        android:onClick="@{registration::onContinueClick}"/>
+
+</RelativeLayout>
+
+</layout>
