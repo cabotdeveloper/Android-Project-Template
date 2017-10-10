@@ -75,6 +75,11 @@ public class RegistrationActivity extends AppCompatActivity implements Registrat
         // Add code to handle failure
     }
 
+    @Override
+    public void onContinueRegistration() {
+
+    }
+
     private void downloadPublicKeyFile() throws IOException, NoSuchAlgorithmException, KeyStoreException, CertificateException {
 
         keyFileDirectory = new File(Environment.getExternalStorageDirectory().getAbsolutePath().toString() + "/key");

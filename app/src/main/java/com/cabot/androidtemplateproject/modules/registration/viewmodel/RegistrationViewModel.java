@@ -53,6 +53,7 @@ public class RegistrationViewModel implements ApiManager.ApiResponseListener{
        /**
         * add the action here
         **/
+       mListener.onContinueRegistration();
     }
 
     public void onFirstNameChanged(CharSequence firstName, int start, int before, int count) {
@@ -74,6 +75,7 @@ public class RegistrationViewModel implements ApiManager.ApiResponseListener{
 
         void onInitializationSuccess();
         void onInitializationFailure();
+        void onContinueRegistration();
         void onStartRegistration();
         void onFailureRegistration();
         void onSuccessRegistration();
